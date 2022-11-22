@@ -1,0 +1,1 @@
+FROM eu.gcr.io/gitpod-core-dev/build/dashboard:commit-c54b3bf6f17cc68c4f32c8301e8aa8620d6194d3

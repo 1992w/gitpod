@@ -1,0 +1,1 @@
+FROM eu.gcr.io/gitpod-core-dev/build/blobserve:commit-8c12d52ee98b03fd0864a8709aaf65999f150904

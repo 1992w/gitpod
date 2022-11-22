@@ -1,0 +1,1 @@
+FROM eu.gcr.io/gitpod-core-dev/build/ide-proxy:commit-b20d03af53d9d89316a8603387b81e85cb003229

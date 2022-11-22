@@ -1,0 +1,1 @@
+FROM eu.gcr.io/gitpod-core-dev/build/ws-proxy:commit-73ea49bec3ed43432a96d8abb3e2824b7218152a
