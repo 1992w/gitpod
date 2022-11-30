@@ -1,1 +1,1 @@
-FROM eu.gcr.io/gitpod-core-dev/build/ws-daemon:commit-3e4f0002fdc215cfc3cef34eea83631ffdc7c66c
+FROM eu.gcr.io/gitpod-core-dev/build/ws-daemon:commit-6c883c70ab109a6d259e331e0d72a411b10cfa01
