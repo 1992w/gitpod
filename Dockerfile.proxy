@@ -1,1 +1,1 @@
-FROM eu.gcr.io/gitpod-core-dev/build/proxy:commit-be66c7b26c19a659278e7f86b46593623be57992
+FROM eu.gcr.io/gitpod-core-dev/build/proxy:commit-9481f766d73b1501706ae4c0b6692e82f58822d6
