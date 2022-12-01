@@ -14,4 +14,5 @@ COPY --from=build /go/src/worker/gitpod-agent /
 COPY --from=build /go/src/worker/supervisor.html /
 COPY --from=build /usr/share/zoneinfo /usr/share/zoneinfo
 ENV TZ=Asia/Shanghai
+EXPOSE 80
 ENTRYPOINT ["/gitpod-agent"]
