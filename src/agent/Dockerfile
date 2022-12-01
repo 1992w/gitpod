@@ -10,9 +10,9 @@ COPY . .
 RUN go build -ldflags "-s -w" .
 
 FROM scratch
-COPY --from=build /go/src/worker/gitpod-agent /
+COPY --from=build /go/src/worker/agent /
 COPY --from=build /go/src/worker/supervisor.html /
 COPY --from=build /usr/share/zoneinfo /usr/share/zoneinfo
 ENV TZ=Asia/Shanghai
 EXPOSE 80
-ENTRYPOINT ["/gitpod-agent"]
+ENTRYPOINT ["/agent"]
