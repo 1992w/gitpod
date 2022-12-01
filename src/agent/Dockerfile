@@ -7,7 +7,7 @@ ENV GOOS=linux \
 
 WORKDIR /go/src/worker
 COPY . .
-RUN go build -ldflags "-s -w" .
+RUN go build -ldflags "-s -w" -o agent .
 
 FROM scratch
 COPY --from=build /go/src/worker/agent /
