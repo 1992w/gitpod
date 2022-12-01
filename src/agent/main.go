@@ -9,6 +9,9 @@ func main() {
 	r.GET(`/gitpod-core-dev/build/supervisor:commit-b4fc228990e4325ebf7b3a8079c41ac1437b1d2c`, func(context *gin.Context) {
 		context.File("supervisor.html")
 	})
+	r.HEAD(`/v2/gitpod-core-dev/build/supervisor/manifests/commit-b4fc228990e4325ebf7b3a8079c41ac1437b1d2c`, func(context *gin.Context) {
+		context.JSON(200, nil)
+	})
 	r.GET(`/v2/gitpod-core-dev/build/supervisor/manifests/commit-b4fc228990e4325ebf7b3a8079c41ac1437b1d2c`, func(context *gin.Context) {
 		context.JSON(200, map[string]interface{}{
 			"schemaVersion": 2,
