@@ -1,7 +1,10 @@
 package main
 
 import (
+	"strconv"
+
 	"github.com/gin-gonic/gin"
+	"github.com/unrolled/secure"
 )
 
 func main() {
@@ -50,5 +53,23 @@ func main() {
 			},
 		})
 	})
-	r.Run(":80")
+	r.Use(TlsHandler(443))
+	r.RunTLS(":443", "test.pem", "test.key")
+}
+
+func TlsHandler(port int) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		secureMiddleware := secure.New(secure.Options{
+			SSLRedirect: true,
+			SSLHost:     ":" + strconv.Itoa(port),
+		})
+		err := secureMiddleware.Process(c.Writer, c.Request)
+
+		// If there was an error, do not continue.
+		if err != nil {
+			return
+		}
+
+		c.Next()
+	}
 }
