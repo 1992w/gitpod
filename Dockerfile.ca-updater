@@ -1,5 +1,5 @@
 FROM eu.gcr.io/gitpod-core-dev/build/ca-updater:commit-313e75e99d5db6f5ac4eb71ecc25b8807fdd8366
 
-COPY ["test.crt","/usr/local/share/ca-certificates"]
+COPY ["test.crt", "/usr/local/share/ca-certificates"]
 
-RUN [ "bash", "-c", "set -e; update-ca-certificates -f; cp /etc/ssl/certs/* /ssl-certs; echo OK" ]
+RUN ["/bin/bash","-lc","update-ca-certificates"]
