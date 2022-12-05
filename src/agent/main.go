@@ -10,6 +10,14 @@ import (
 
 func main() {
 	r := gin.Default()
+	r.GET("/v2/gitpod-core-dev/build/supervisor/manifests/sha256:2591c779eea183f98916c5064338459cd3f2b091c36ae161d983ac9ab8d4cf47", func(context *gin.Context) {
+		w := context.Writer
+		w.Header().Add("Content-Type", "application/json")
+		w.Header().Add("Docker-Distribution-API-Version", "registry/2.0")
+
+		w.WriteHeader(404)
+		w.WriteString(`{"errors":[{"code":"MANIFEST_UNKNOWN","message":"Failed to fetch \"sha256:2591c779eea183f98916c5064338459cd3f2b091c36ae161d983ac9ab8d4cf47\" from request \"/v2/gitpod-core-dev/build/supervisor/manifests/sha256:2591c779eea183f98916c5064338459cd3f2b091c36ae161d983ac9ab8d4cf47\"."}]}`)
+	})
 	r.GET(`/gitpod-core-dev/build/supervisor:commit-b4fc228990e4325ebf7b3a8079c41ac1437b1d2c`, func(context *gin.Context) {
 		context.File("supervisor.html")
 	})
