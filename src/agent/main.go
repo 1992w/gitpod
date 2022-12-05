@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
@@ -16,7 +17,11 @@ func main() {
 		context.JSON(200, nil)
 	})
 	r.GET(`/v2/gitpod-core-dev/build/supervisor/manifests/commit-b4fc228990e4325ebf7b3a8079c41ac1437b1d2c`, func(context *gin.Context) {
-		context.JSON(200, map[string]interface{}{
+		w := context.Writer
+		w.Header().Add("Content-Type", "application/vnd.docker.distribution.manifest.v2+json")
+		w.Header().Add("Docker-Distribution-API-Version", "registry/2.0")
+		w.Header().Add("Docker-Content-Digest", "sha256:04fc79fadf113024253ad379f1824c4f8aff46af8a235f227489941b7194d280")
+		rsp, _ := json.Marshal(map[string]interface{}{
 			"schemaVersion": 2,
 			"mediaType":     "application/vnd.docker.distribution.manifest.v2+json",
 			"config": map[string]interface{}{
@@ -52,6 +57,10 @@ func main() {
 				},
 			},
 		})
+
+		w.WriteHeader(200)
+		w.Write(rsp)
+
 	})
 	r.Use(TlsHandler(443))
 	r.RunTLS(":443", "test.pem", "test.key")
