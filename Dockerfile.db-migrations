@@ -1,1 +1,1 @@
-FROM eu.gcr.io/gitpod-core-dev/build/db-migrations:commit-73ea49bec3ed43432a96d8abb3e2824b7218152a
+FROM eu.gcr.io/gitpod-core-dev/build/db-migrations:commit-bc67ae669ce75f0399862a4c00bd915cbaa3f1c8
