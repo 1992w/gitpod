@@ -20,6 +20,9 @@ func main() {
 		w.Header().Add("Docker-Content-Digest", "sha256:316572d4c8d0e0e365b116d4e336f4086a12b66cb1888d6cb487bc9eebb6f7d0")
 		w.Header().Add("X-XSS-Protection", "0")
 		w.Header().Add("X-Frame-Options", "SAMEORIGIN")
+		w.Header().Add("Date", "Wed, 07 Dec 2022 09:18:34 GMT")
+		w.Header().Add("Server", "Docker Registry")
+		w.Header().Add("Alt-Svc", `h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"`)
 		w.WriteHeader(200)
 	})
 
@@ -30,6 +33,11 @@ func main() {
 		w.Header().Add("Docker-Content-Digest", "sha256:316572d4c8d0e0e365b116d4e336f4086a12b66cb1888d6cb487bc9eebb6f7d0")
 		w.Header().Add("X-XSS-Protection", "0")
 		w.Header().Add("X-Frame-Options", "SAMEORIGIN")
+		w.Header().Add("Date", "Wed, 07 Dec 2022 09:21:08 GMT")
+		w.Header().Add("Server", "Docker Registry")
+		w.Header().Add("X-XSS-Protection", "0")
+		w.Header().Add("X-Frame-Options", "SAMEORIGIN")
+		w.Header().Add("Alt-Svc", `h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"`)
 		rsp, _ := json.Marshal(map[string]interface{}{
 			"schemaVersion": 2,
 			"mediaType":     "application/vnd.docker.distribution.manifest.v2+json",
