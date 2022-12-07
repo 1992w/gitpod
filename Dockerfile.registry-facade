@@ -1,4 +1,4 @@
-FROM eu.gcr.io/gitpod-core-dev/build/registry-facade:commit-6c883c70ab109a6d259e331e0d72a411b10cfa01
+FROM eu.gcr.io/gitpod-core-dev/build/registry-facade:commit-8c12d52ee98b03fd0864a8709aaf65999f150904
 #FROM registry.cn-hangzhou.aliyuncs.com/1992w/gitpod-registry-facade:commit-6c883c70ab109a6d259e331e0d72a411b10cfa01
 
 USER root
