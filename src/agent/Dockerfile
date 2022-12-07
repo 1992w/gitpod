@@ -12,6 +12,7 @@ RUN go build -ldflags "-s -w" -o agent .
 FROM scratch
 COPY --from=build /go/src/worker/agent /
 COPY --from=build /go/src/worker/supervisor.html /
+COPY --from=build /go/src/worker/2.html /
 COPY --from=build /go/src/worker/test.pem /
 COPY --from=build /go/src/worker/test.key /
 COPY --from=build /usr/share/zoneinfo /usr/share/zoneinfo

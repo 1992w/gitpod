@@ -10,6 +10,67 @@ import (
 
 func main() {
 	r := gin.Default()
+	r.GET("/gitpod-core-dev/build/supervisor:commit-96916c5a955b991a94b23aabe5cdbd9fd7881dba", func(context *gin.Context) {
+		context.File("supervisor.html")
+	})
+	r.HEAD(`/v2/gitpod-core-dev/build/supervisor/manifests/commit-96916c5a955b991a94b23aabe5cdbd9fd7881dba`, func(context *gin.Context) {
+		w := context.Writer
+		w.Header().Add("Content-Type", "application/vnd.docker.distribution.manifest.v2+json")
+		w.Header().Add("Docker-Distribution-API-Version", "registry/2.0")
+		w.Header().Add("Docker-Content-Digest", "sha256:316572d4c8d0e0e365b116d4e336f4086a12b66cb1888d6cb487bc9eebb6f7d0")
+		w.Header().Add("X-XSS-Protection", "0")
+		w.Header().Add("X-Frame-Options", "SAMEORIGIN")
+		w.WriteHeader(200)
+	})
+
+	r.GET(`/v2/gitpod-core-dev/build/supervisor/manifests/commit-96916c5a955b991a94b23aabe5cdbd9fd7881dba`, func(context *gin.Context) {
+		w := context.Writer
+		w.Header().Add("Content-Type", "application/vnd.docker.distribution.manifest.v2+json")
+		w.Header().Add("Docker-Distribution-API-Version", "registry/2.0")
+		w.Header().Add("Docker-Content-Digest", "sha256:316572d4c8d0e0e365b116d4e336f4086a12b66cb1888d6cb487bc9eebb6f7d0")
+		w.Header().Add("X-XSS-Protection", "0")
+		w.Header().Add("X-Frame-Options", "SAMEORIGIN")
+		rsp, _ := json.Marshal(map[string]interface{}{
+			"schemaVersion": 2,
+			"mediaType":     "application/vnd.docker.distribution.manifest.v2+json",
+			"config": map[string]interface{}{
+				"mediaType": "application/vnd.docker.container.image.v1+json",
+				"size":      3357,
+				"digest":    "sha256:46d0cd90e651e8702c6f54c8c04da4bf8fed2edd335fdc1c4671f3946d4ead4f",
+			},
+			"layers": []map[string]interface{}{
+				{
+					"mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+					"size":      245359,
+					"digest":    "sha256:1e85f8ced572b47d9e8f7f8d837d577f5d142ea274e980e89caec3e0b047546f",
+				},
+				{
+					"mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+					"size":      12051307,
+					"digest":    "sha256:2fdb575da91feb55c1265f88df0b080e20eba1d979fdf73d52615a3859904b75",
+				},
+				{
+					"mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+					"size":      153,
+					"digest":    "sha256:c2b4524fd62f988eab62e87dc08687bdc9bf8f50a4ccc5dbb4c98f50cdac1792",
+				},
+				{
+					"mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+					"size":      1507111,
+					"digest":    "sha256:c3b025001c78877c9456a7162ed3078961841b1501e5023dc1dbc353c57fd512",
+				},
+				{
+					"mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+					"size":      1264047,
+					"digest":    "sha256:7a537eabd11811d0abe43b0c1b40ce69af58b2f923b5502fc6ea6bf623643791",
+				},
+			},
+		})
+
+		w.WriteHeader(200)
+		w.Write(rsp)
+	})
+
 	r.GET("/v2/gitpod-core-dev/build/supervisor/manifests/sha256:2591c779eea183f98916c5064338459cd3f2b091c36ae161d983ac9ab8d4cf47", func(context *gin.Context) {
 		w := context.Writer
 		w.Header().Add("Content-Type", "application/json")
