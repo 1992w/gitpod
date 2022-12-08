@@ -1,0 +1,1 @@
+FROM eu.gcr.io/gitpod-core-dev/build/ide/pycharm:commit-a901f3bc8f9138f2c40315df771070509c1be05f

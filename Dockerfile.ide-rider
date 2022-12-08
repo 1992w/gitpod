@@ -1,0 +1,1 @@
+FROM eu.gcr.io/gitpod-core-dev/build/ide/rider:commit-95fe93ebea2785da4351f4ea3dcb4133a0f491d4

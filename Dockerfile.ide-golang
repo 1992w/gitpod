@@ -1,1 +1,1 @@
-FROM eu.gcr.io/gitpod-core-dev/build/ide/goland:commit-73ea49bec3ed43432a96d8abb3e2824b7218152a
+FROM eu.gcr.io/gitpod-core-dev/build/ide/goland:commit-b4fc228990e4325ebf7b3a8079c41ac1437b1d2c
