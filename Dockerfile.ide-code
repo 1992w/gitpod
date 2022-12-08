@@ -1,1 +1,1 @@
-FROM eu.gcr.io/gitpod-core-dev/build/ide/code:commit-96916c5a955b991a94b23aabe5cdbd9fd7881dba
+FROM eu.gcr.io/gitpod-core-dev/build/ide/code:commit-ca9338036dd429af37246cb3bfac8062591db66b
